@@ -20,4 +20,9 @@ public class CryptoUtils {
         byte[] secret = ka.generateSecret();
         return new SecretKeySpec(secret, 0, 16, "AES");
     }
+    public static String encrypt(SecretKey k, String msg) throws Exception {
+        Cipher c = Cipher.getInstance("AES");
+        c.init(Cipher.ENCRYPT_MODE, k);
+       return Base64.getEncoder().encodeToString(c.doFinal(msg.getBytes("UTF-8")));
+    }
 }
