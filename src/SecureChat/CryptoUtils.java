@@ -25,4 +25,10 @@ public class CryptoUtils {
         c.init(Cipher.ENCRYPT_MODE, k);
        return Base64.getEncoder().encodeToString(c.doFinal(msg.getBytes("UTF-8")));
     }
+    public static String decrypt (SecretKey k, String data) throws Exception {
+        Cipher c= Cipher.getInstance("AES");
+        c.init(Cipher.DECRYPT_MODE, k);
+        byte[] dec = Base64.getDecoder().decode(data);
+        return new String(c.doFinal(dec), "UTF-8");
+}
 }
