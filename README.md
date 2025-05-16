@@ -15,11 +15,11 @@ Ky projekt implementon një **protokoll të sigurt për mesazhe instant** në Ja
 * **Client.java** — Klienti për komunikim të sigurt
 
 ## Udhezime per perdorim
-# 1. Kompilojmë të gjitha klasat: 
+* 1. Kompilojmë të gjitha klasat: 
 javac SecureChat/*.java
-# 2. Starto serverin
+* 2. Starto serverin
 java SecureChat.Server
-# 3. Në një terminal tjetër, starto klientin
+* 3. Në një terminal tjetër, starto klientin
 java SecureChat.Client
 
 ## Teknologji të përdorura
