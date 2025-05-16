@@ -5,5 +5,16 @@ public class Client {
         DataOutputStream out = new DataOutputStream(s.getOutputStream());
 
         KeyPair myKP = CryptoUtils.genDH();
+        int len = in.readInt();
+        byte[] srvPubEnc = new byte[len];
+        in.readFully(srvPubEnc);
+        PublicKey srvPub = KeyFactory.getInstance("DH")
+                .generatePublic(new X509EncodedKeySpec(srvPubEnc));
+
+        out.writeInt(myKP.getPublic().getEncoded().length);
+        out.write(myKP.getPublic().getEncoded());
+
+        SecretKey aes = CryptoUtils.agreeAES(myKP, srvPub);
+        System.out.println("Shared AES gati!");
     }
 }
