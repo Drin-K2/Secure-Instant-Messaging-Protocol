@@ -12,17 +12,22 @@ Ky projekt implementon një **protokoll të sigurt për mesazhe instant** në Ja
 
 * **CryptoUtils.java** — Mjetet për DH dhe AES  
 * **Server.java** — Serveri i komunikimit të sigurt  
-* **Client.java** — Klienti për komunikim të sigurt  
+* **Client.java** — Klienti për komunikim të sigurt
+
+## Udhezime per perdorim
+# 1. Kompilojmë të gjitha klasat: 
+javac SecureChat/*.java
+# 2. Starto serverin
+java SecureChat.Server
+# 3. Në një terminal tjetër, starto klientin
+java SecureChat.Client
 
 ## Teknologji të përdorura
-
 * Java JDK 8+  
 * Diffie-Hellman (DH) për shkëmbimin e çelësave  
 * AES për enkriptim simetrik  
 * Socket TCP për komunikim rrjetor  
 
-## Kujdes dhe vërejtje
-
-* AES përdor modin default (ECB) që nuk është i rekomanduar për përdorim prodhues.  
-* Protokolli nuk përfshin autentifikim ose integritet të mesazheve, prandaj duhet përmirësuar për përdorim real.  
-* Ky është një projekt mësimor për konceptin e komunikimit të koduar.
+## Punuan: 
+Studentët e Grupit 13 në kuadër të lëndës së Sigurisë së të Dhënave.
+Universiteti i Prishtinës – Fakulteti i Inxhinierisë Elektrike dhe Kompjuterike
