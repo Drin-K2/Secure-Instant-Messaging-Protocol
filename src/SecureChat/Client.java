@@ -16,5 +16,13 @@ public class Client {
 
         SecretKey aes = CryptoUtils.agreeAES(myKP, srvPub);
         System.out.println("Shared AES gati!");
+
+        BufferedReader stdin = new BufferedReader(new InputStreamReader(System.in));
+        while (true) {
+            System.out.print("Client> ");
+            String msg = stdin.readLine();
+            out.writeUTF(CryptoUtils.encrypt(aes, msg));
+            String resp = in.readUTF();
+            System.out.println("Server: " + CryptoUtils.decrypt(aes, resp));
     }
 }
